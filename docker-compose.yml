@@ -1,0 +1,34 @@
+services:
+  db:
+    image: postgres:14
+    container_name: pg_bookstore
+    restart: always
+    environment:
+      POSTGRES_USER: rahim
+      POSTGRES_PASSWORD: rahimpass
+      POSTGRES_DB: bookstore
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build: .
+    image: bookstore_api       # image
+    container_name: bookstore_api
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - DB_USER=rahim
+      - DB_PASSWORD=rahimpass
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=bookstore
+      - JWT_SECRET=your_super_key
+
+volumes:
+  postgres_data:
