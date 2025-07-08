@@ -133,9 +133,7 @@ Add a short visual or explanation to catch attention:
 
 All routes are documented using Swagger (OpenAPI 3.0).
 
-Visit Swagger UI:
-
-👉 `http://localhost:3000/api-docs`
+👉 Visit Swagger UI: `http://localhost:3000/api-docs`
 
 📌 Sample Screenshot:
-![Swagger UI](./public/swagger-preview.png) 
+![Swagger UI Preview](public/swagger-preview.png)
