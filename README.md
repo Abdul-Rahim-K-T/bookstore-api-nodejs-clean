@@ -19,22 +19,22 @@ This project demonstrates scalable backend design, including Swagger API docs, u
 ---
 
 ## 📁 Project Structure (Clean Architecture)
-
-**bookstore-api-nodejs-clean/**
-**├── config/ # Swagger configuration**
-**├── domain/ # Core domain models**
-**├── usecases/ # Business logic layer (tested)
-**├── infrastructure/
-**│ ├── db/ # PostgreSQL logic & user repository
-**│ └── middleware/ # JWT authentication middleware
-**├── interfaces/
-**│ ├── controllers/ # HTTP controller layer
-**│ └── routes/ # Express route layer with Swagger docs
-**├── .env # Environment variables**
-**├── Dockerfile # App container config**
-**├── docker-compose.yml # Multi-container setup**
-**├── server.mjs # Entry point with Swagger + express setup**
-**└── package.json**
+```bash
+bookstore-api-nodejs-clean/
+├── config/ # Swagger configuration
+├── domain/ # Core domain models
+├── usecases/ # Business logic layer (tested)
+├── infrastructure/
+│ ├── db/ # PostgreSQL logic & user repository
+│ └── middleware/ # JWT authentication middleware
+├── interfaces/
+│ ├── controllers/ # HTTP controller layer
+│ └── routes/ # Express route layer with Swagger docs
+├── .env # Environment variables
+├── Dockerfile # App container config
+├── docker-compose.yml # Multi-container setup
+├── server.mjs # Entry point with Swagger + express setup
+└── package.json
 
 
 ---
