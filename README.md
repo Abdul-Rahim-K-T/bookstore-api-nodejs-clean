@@ -127,7 +127,6 @@ npm test
 Add a short visual or explanation to catch attention:
 
 ```markdown
----
 
 ## 📘 API Documentation with Swagger
 
@@ -137,3 +136,4 @@ All routes are documented using Swagger (OpenAPI 3.0).
 
 📌 Sample Screenshot:
 ![Swagger UI Preview](public/swagger-preview.png)
+---
