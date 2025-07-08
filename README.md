@@ -138,4 +138,4 @@ Visit Swagger UI:
 👉 `http://localhost:3000/api-docs`
 
 📌 Sample Screenshot:
-> ![Swagger UI](./public/swagger-preview.png) <!-- Optional if you have image -->
+![Swagger UI](./public/swagger-preview.png) 
