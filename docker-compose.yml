@@ -41,11 +41,5 @@ services:
     restart: always
     ports:
       - "3000:3000"
-    environment:
-      - PORT=3000
-      - DB_USER=postgres
-      - DB_PASSWORD=uGexnIlXZYtyPENkeoAIwVIldZaoqRAL
-      - DB_HOST=ballast.proxy.rlwy.net
-      - DB_PORT=40549
-      - DB_NAME=railway
-      - JWT_SECRET=your_super_key
+    env_file:
+      - .env
