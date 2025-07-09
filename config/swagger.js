@@ -12,6 +12,9 @@ const swaggerOptions = {
             {
                 url: 'http://localhost:'+ process.env.PORT,
             },
+            {
+                url: 'https://bookstore-api-nodejs-clean-production.up.railway.app',
+            },
         ],
         components: {
             securitySchemes: {
