@@ -18,7 +18,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Serve raw OpenAPI JSON spect at /api-docs-json
 app.get('/api-docs-json', (req, res) => {
-    res.setHeader('Content-Type', 'applicatin/json');
+    res.setHeader('Content-Type', 'application/json');
     res.send(swaggerSpec);
 });
 
