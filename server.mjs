@@ -16,20 +16,34 @@ app.use(json());
 const swaggerSpec = swaggerJSDoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
+// Serve raw OpenAPI JSON spect at /api-docs-json
+app.get('/api-docs-json', (req, res) => {
+    res.setHeader('Content-Type', 'applicatin/json');
+    res.send(swaggerSpec);
+});
+
 async function startServer(){
-    // Ensure database is ready before routing starts
-    await initializeDatabase();
+    try{
+      // Ensure database is ready before routing starts
+      await initializeDatabase();
 
-    app.use('/api/users', userRoutes);
+      //api routes
+      app.use('/api/users', userRoutes);
 
-    app.use((req, res)=> {
+      // 404 fallback handler
+      app.use((req, res)=> {
         res.status(404).json({ message: 'Not found' });
-    });
+      });
 
-    app.listen(process.env.PORT, () => {
-        console.log(`Server is running on port at http://localhost:${process.env.PORT}`);
-        console.log(`Swagger Docs at http://localhost:${process.env.PORT}/api-docs`);
-    });
+      const port = process.env.PORT || 3000;
+      app.listen(port, () => {
+        console.log(`Server is running on port at http://localhost:${port}`);
+        console.log(`Swagger Docs at http://localhost:${port}/api-docs`);
+        console.log(`Swagger JSON: http://localhost:${port}/api-docs-json`);
+      });
+    } catch (error) {
+        console.error('Failed to initilize server:', error);
+    }
 }
 
 startServer();
